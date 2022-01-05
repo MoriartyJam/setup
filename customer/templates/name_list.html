@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<html lang="en">
+    <head>
+         <title>Document</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+       <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{% static  'css/style.css'  %}">
+    </head>
+
+
+<body>
+{% block content %}
+    {% for client in clients %}
+
+        <div class="post">
+            <hr>
+            <h1><a href="">{{ client.name }}</a></h1>
+             </div>
+
+    {% endfor %}
+{% endblock %}
+
+</body>
+</html>

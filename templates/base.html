@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+       <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet"  href="{% static  'css/style.css'  %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
+
+
+    </ul>
+
+</head>
+
+<body>
+
+
+
+
+<div class="header_inner">
+            <li>
+                <a href="{% url 'create' %}">
+                <span class="header_logo">
+                <img src="/static/img/logo(1).png">
+                </span>
+                </a>
+            </li>
+            <ul>
+
+
+                    {% if request.session.name %}
+                        <li><a  href="{% url 'name_list' %}"></span> Name list </a></li>
+                        <li><a>Welcome {{request.session.name}}!</a>
+
+                    {% elif request.session %}
+                        <li><a  href="{% url 'name_list' %}"></span> Name list </a></li>
+                        <li><a>Welcome guest!</a></li>
+                    {% endif %}
+
+
+
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+
+
+
+
+</body>
+
+</html>
